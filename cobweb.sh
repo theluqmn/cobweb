@@ -81,7 +81,8 @@ if command -v cobc >/dev/null 2>&1; then
     
     echo
     echo -e "${UND}Removing object files...${RES}"
-    rm -f "${name}.o" "${other_files[@]%.cbl}.o" "${other_files[@]%.cob}.o"
+    rm -f "${name}.o"
+    find . -maxdepth 2 -name "*.o" -delete
     
     echo
     echo -e "${GRN}[✓] Executable '${name}' created!${RES}"
