@@ -1,5 +1,7 @@
 # Cobweb
 
+<img width="753" height="397" alt="image" src="https://github.com/user-attachments/assets/017aca09-a798-41ea-acb5-4d91253d9d0b" />
+
 A GnuCOBOL compilation tool developed using bash script.
 
 ## Features
