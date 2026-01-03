@@ -52,12 +52,17 @@ else
 fi
 
 if command -v cobc >/dev/null 2>&1; then # VERIFY IF GNUCOBOL INSTALLED
-    main_file=$(find "$arg_directory" -type f \( -iname "*${arg_main}*.cbl" -o -iname "*${arg_main}*.cob" \) | head -1)
+    main_base="${arg_main%.*}"
+    main_file=$(find "$arg_directory" -type f \( \
+        -iname "${main_base}.cbl" -o -iname "${main_base}.cob" -o \
+        -iname "${main_base}.CBL" -o -iname "${main_base}.COB" \) | head -1)
+
     if [ -z "$main_file" ]; then
-        echo -e "${RED}[!] No main file found${RES}"
+        echo -e "${RED}[!] No main file found (tried: ${main_base}.cbl/cob/CBL/COB)${RES}"
         exit 1
     fi
-    echo -e "${BLU}[i] Located main file${RES}"
+    echo -e "${BLU}[i] Located main: ${main_file}${RES}"
+
 
     # COMPILATION
     echo
