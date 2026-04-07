@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# COBWEB v1.0
+# COBWEB v1.1
 # https://github.com/theluqmn/cobweb
 
 # VARIABLES
@@ -92,7 +92,7 @@ if command -v cobc >/dev/null 2>&1; then # VERIFY IF GNUCOBOL INSTALLED
     echo
     echo -e "${UND}Removing object files...${RES}"
     rm -f "${arg_name}.o"
-    find . -maxdepth 2 -name "*.o" -delete
+    find . -maxdepth 10 -name "*.o" -delete
     
     echo
     echo -e "${GRN}[✓] Executable '${arg_name}' created!${RES}"

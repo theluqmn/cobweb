@@ -24,5 +24,6 @@ Cobweb has the following parameters: `./cobweb {arg_output} {arg_main} {arg_dire
 
 ## Notes
 
+- Cobweb's cleanup process only scans for created object files up to 10 directories deep.
 - Cobweb is originally developed to assist in the development of [Timecard](https://github.com/theluqmn/timecard), and both projects are developed for [Hack Club](https://hackclub.com)'s [Flavourtown](https://flavourtown.hackclub.com) event.
 - This project is licensed under the MIT License.
